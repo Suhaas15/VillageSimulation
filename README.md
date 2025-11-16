@@ -408,11 +408,6 @@ Built with ❤️ for autonomous AI simulations and emergent gameplay.
 - [Vite](https://vitejs.dev/) - Build tool
 - [Freepik API](https://www.freepik.com/api) - AI image generation
 
----
-
-<div align="center">
-
-**[Documentation](./ARCHITECTURE.md)** • **[Quick Start](./QUICKSTART.md)** • **[Troubleshooting](./TROUBLESHOOTING.md)**
 
 Made with 🌳 by the Village Simulation Team
 
