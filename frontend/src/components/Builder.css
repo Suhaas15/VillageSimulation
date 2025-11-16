@@ -1,0 +1,141 @@
+.builder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.builder-sprite-img {
+  pointer-events: none;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.builder:hover .builder-sprite-img {
+  transform: scale(1.1);
+}
+
+/* Inventory badge */
+.builder-inventory-badge {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  gap: 4px;
+  z-index: 101;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wood-badge {
+  color: #FFD700;
+}
+
+.stone-badge {
+  color: #C0C0C0;
+}
+
+/* Tooltip */
+.builder-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  pointer-events: none;
+  border: 2px solid #FF8C00;
+}
+
+.builder-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #FF8C00;
+}
+
+.tooltip-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #FF8C00;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.tooltip-position {
+  color: #87CEEB;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.tooltip-inventory {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.tooltip-hint {
+  color: #FFD700;
+  font-style: italic;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Hover effect */
+.builder-hover {
+  filter: brightness(1.2);
+}
+
+.builder-hover .builder-sprite-img {
+  animation: builder-bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes builder-bounce {
+  0%, 100% {
+    transform: scale(1.1) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) translateY(-3px);
+  }
+}
+
+/* Movement animation */
+.builder.moving {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Working animation (when cutting/building) */
+.builder.working .builder-sprite-img {
+  animation: builder-work 0.3s ease-in-out infinite;
+}
+
+@keyframes builder-work {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+

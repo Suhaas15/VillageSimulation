@@ -1,0 +1,13 @@
+{
+  "oracle_spawn": {
+    "x": 20,
+    "y": 20
+  },
+  "environment_memory": {
+    "tree_count": 0,
+    "tree_density": 0.0,
+    "tree_clusters": [],
+    "recommended_resource_zones": [],
+    "map_summary": "Map 40x40 with 0 trees (0.0% density). Terrain: 0 grass, 0 dirt, 0 water tiles. 0 tree clusters identified."
+  }
+}

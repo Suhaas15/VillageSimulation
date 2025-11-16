@@ -1,0 +1,48 @@
+.oracle {
+  user-select: none;
+  filter: drop-shadow(3px 3px 6px rgba(138, 43, 226, 0.6));
+  animation: oracle-glow 2s ease-in-out infinite;
+}
+
+@keyframes oracle-glow {
+  0%, 100% {
+    filter: drop-shadow(3px 3px 6px rgba(138, 43, 226, 0.6));
+  }
+  50% {
+    filter: drop-shadow(3px 3px 12px rgba(138, 43, 226, 0.9));
+  }
+}
+
+.oracle-hover {
+  transform: translate(-50%, -50%) scale(1.15) !important;
+  filter: drop-shadow(3px 3px 15px rgba(255, 215, 0, 0.8));
+  animation: none;
+}
+
+.oracle-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.oracle-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #764ba2;
+}
+

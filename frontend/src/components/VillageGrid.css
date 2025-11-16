@@ -1,0 +1,233 @@
+/* Main Layout - Two Container System */
+.village-main-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* ===========================
+   CONTROLS CONTAINER 
+   (Activity Log + Builder Menu)
+   =========================== */
+.controls-container {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+/* Builder control panel */
+.builder-control-panel {
+  background: rgba(26, 32, 44, 0.95);
+  border: 2px solid #4a5568;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #4a5568;
+}
+
+.control-header h3 {
+  margin: 0;
+  color: #f7fafc;
+  font-size: 18px;
+}
+
+.create-builder-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-builder-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+.no-builders {
+  text-align: center;
+  padding: 20px;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.builder-card {
+  background: rgba(45, 55, 72, 0.8);
+  border: 2px solid #4a5568;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.builder-card:hover {
+  border-color: #667eea;
+  transform: translateX(-4px);
+}
+
+.builder-card.selected {
+  border-color: #f6ad55;
+  background: rgba(246, 173, 85, 0.1);
+  box-shadow: 0 0 20px rgba(246, 173, 85, 0.3);
+}
+
+.builder-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.builder-name {
+  font-weight: bold;
+  color: #f7fafc;
+  font-size: 14px;
+}
+
+.builder-position {
+  color: #a0aec0;
+  font-size: 12px;
+}
+
+.builder-inventory-small {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #cbd5e0;
+}
+
+.builder-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  flex: 1;
+  background: rgba(66, 153, 225, 0.2);
+  border: 1px solid #4299e1;
+  color: #90cdf4;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.action-btn:hover {
+  background: rgba(66, 153, 225, 0.4);
+  border-color: #63b3ed;
+}
+
+.action-btn.oracle-btn {
+  background: rgba(159, 122, 234, 0.2);
+  border-color: #9f7aea;
+  color: #d6bcfa;
+}
+
+.action-btn.oracle-btn:hover {
+  background: rgba(159, 122, 234, 0.4);
+  border-color: #b794f4;
+}
+
+/* ===========================
+   GRID CONTAINER 
+   (Game Grid Only)
+   =========================== */
+.grid-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 32, 44, 0.6);
+  border: 2px solid #4a5568;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.village-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 0;
+  background: #2a2a3e;
+  border: 2px solid #4a5568;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+/* ===========================
+   LOADING STATE
+   =========================== */
+.grid-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.grid-loading p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* ===========================
+   SCROLLBAR STYLING
+   =========================== */
+.controls-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.controls-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.controls-container::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+
+.controls-container::-webkit-scrollbar-thumb:hover {
+  background: #667eea;
+}
